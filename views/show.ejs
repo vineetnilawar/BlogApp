@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <style>
+       #delete{
+           display:inline;
+       }
+   </style>
+    <meta charset="utf-8" />
+    <title>Semantic UI CDN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+</head>
+<body>
+
+
+<div class="ui container">
+    <div class="ui fixed inverted menu ">    
+        <div class="header item"><i class="code icon"></i>Blog Site</div>
+        <a href="/" class="item">Home</a>
+        <a href="/blogs/new" class="item">New Post</a>
+    </div>
+     <div class="ui main text container segment" style="margin-top: 5em;">
+         <div class="ui huge header">
+            <h1 ><%= foundBlog.title %></h1>
+         </div>
+        <div class="ui top attached ">
+            <div class="item">
+                <img class="ui centered rounded image" src="<%=foundBlog.image%>" alt="">
+            </div>
+
+        </div>
+        <div class="content">
+            <div><%=foundBlog.created.toDateString()%></div>
+        </div>
+        <div class="description"><%- foundBlog.body %></div>
+        
+            <a class="ui inverted violet button" href="/blogs/<%=foundBlog._id%>/edit">Edit</a>
+            <form id="delete" action="/blogs/<%=foundBlog._id%>?_method=delete" method="post">
+                <button class="ui inverted red button">Delete</button>
+            </form>
+            
+       
+        
+        
+        
+        
+            
+        
+
+     </div>
+        
+
+</div>
+      
+</body>
+</html>
+       
+
+
+

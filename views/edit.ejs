@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   
+    <meta charset="utf-8" />
+    <title>Semantic UI CDN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+</head>
+<body>
+
+
+    <div class="ui fixed inverted menu ">
+        <div class="header item"><i class="code icon"></i>Blog Site</div>
+        <a href="/" class="item">Home</a>
+        <a href="/blogs/new" class="item">Edit Post</a>
+    </div  >
+            <div  style="margin-top: 7em;" class="ui main text container segment">
+                <div class="ui huge header">Edit <%= Blog.title%></div>
+                
+                    <form  class=" ui form" action="/blogs/<%= Blog._id%>?_method=put" method="post">
+                        
+                            <div class="field">
+                                <label for="">Title</label>
+                                <input type="text" name="blog[title]" value="<%=Blog.title %>">
+                            </div>
+                            <div class="field">
+                                <label for="">Image</label>
+                                <input type="text" name="blog[image]"  value="<%= Blog.image%>">
+                            </div>
+                            <div class="field">
+                                <label for="">Blog Content</label>
+                                <textarea name="blog[body]" id="" cols="30" rows="10" ><%=Blog.body %>"</textarea>
+                            </div>
+                    
+                        
+                    
+                        <button class="ui inverted violet button">Submit</button>
+                    </form>
+            </div>
+         
+</body>
+</html>
+
